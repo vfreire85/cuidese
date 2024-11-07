@@ -37,18 +37,19 @@
         <title>Cuide-se</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Cuide-se</h1>
-            <h2>Login do cidadão</h2>
-            <form method="post" class="loginform">
-            	<label for="cpf">Digite seu CPF, sem ponto ou hífen:</label><br>
-            	<input type="number" pattern="[0-9]*" inputmode="numeric" id="cpf" name="cpf"/><br><br>
-            	<label for="senha">Digite sua senha:</label><br>
-            	<input type="password" min="10" id="senha" name="senha"/><br><br>
-            	<a href="home_screen.html">
-            		<button type="button" class="button">Entrar</button> 
-            	</a>
-            </form> 
+        <div class="intra">
+        	<div class="internal_divs">
+            	<h1>Cuide-se</h1>
+            	<h2>Olá, Usuário!</h2><br>
+            	<h3>Redefina sua senha aqui:</h3>
+            	<form method="post" class="loginform">
+            		<label for="cpf">Digite seu CPF, sem ponto ou hífen:</label>
+            		<input type="number" pattern="[0-9]*" inputmode="numeric" id="cpf" name="cpf"/><br>
+            		<label for="senha">Digite sua senha:</label>
+            		<input type="password" min="10" id="senha" name="senha"/><br>
+            	</form><br>
+            	<a href="home_screen.html">Retornar</a>
+            </div>
         </div>
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>

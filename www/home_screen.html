@@ -37,18 +37,30 @@
         <title>Cuide-se</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Cuide-se</h1>
-            <h2>Login do cidadão</h2>
-            <form method="post" class="loginform">
-            	<label for="cpf">Digite seu CPF, sem ponto ou hífen:</label><br>
-            	<input type="number" pattern="[0-9]*" inputmode="numeric" id="cpf" name="cpf"/><br><br>
-            	<label for="senha">Digite sua senha:</label><br>
-            	<input type="password" min="10" id="senha" name="senha"/><br><br>
-            	<a href="home_screen.html">
-            		<button type="button" class="button">Entrar</button> 
-            	</a>
-            </form> 
+        <div class="intra">
+        	<div class="internal_divs">
+            	<h1>Cuide-se</h1>
+            	<h2>Olá, Usuário!</h2><br>
+            	<a href="/redefine.html">Veja seu perfil e altere seus dados pessoais aqui</a>
+            	<h2>Sua unidade de saúde mais próxima é a:</h2><br>
+            	<h3>UBS Alfa</h3><br>
+            	<p>Rua das Goiabeiras, S/N</p>
+            	<p>Bairro Zaratustra</p>
+            	<p>Horário de funcionamento: das 08h às 18h</p><br>
+            </div>
+            <div class="internal_divs">
+            	<h3>Os exames oferecidos nesta unidade de saúde são:</h3>
+            	<ul>
+            		<li>Teste rápido de detecção de HIV</li>
+            		<li>Teste rápido de detecção de Covid-19</li>
+            		<li>Teste rápido de detecção de Zika</li>
+            		<li>Teste rápido de detecção de Chikungunya</li>
+            		<li>Teste rápido de detecção de Dengue</li>
+            	</ul><br>
+            	<h3>Seu clínico geral é:</h3><br>
+            	<p>Dr. Drauzio Varella</p>
+            	<p>CRM/XX 6874/83</p>
+            </div>
         </div>
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
