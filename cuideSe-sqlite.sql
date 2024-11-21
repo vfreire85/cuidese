@@ -9,9 +9,11 @@ BEGIN TRANSACTION;
 CREATE TABLE admins
 (
 admin_id TEXT NOT NULL DEFAULT 0,
-admin_nome TEXT DEFAULT none,
+admin_nome TEXT NOT NULL DEFAULT none,
+admin_senha TEXT DEFAULT none,
 posto_id bigint NOT NULL DEFAULT 0,
 CONSTRAINT pk_admins PRIMARY KEY (admin_id)
+FOREIGN KEY (posto_id) REFERENCES postos (posto_id)
 );
 CREATE TABLE estoques
 (
@@ -20,6 +22,8 @@ item_id bigint NOT NULL,
 quantidade bigint DEFAULT 0,
 posto_id bigint NOT NULL DEFAULT 0,
 CONSTRAINT pk_estoques PRIMARY KEY (estoque_id)
+FOREIGN KEY (item_id) REFERENCES itens (item_id)
+FOREIGN KEY (posto_id) REFERENCES postos (posto_id)
 );
 CREATE TABLE itens
 (
@@ -30,25 +34,19 @@ CONSTRAINT pk_itens PRIMARY KEY (item_id)
 CREATE TABLE postos
 (
 posto_id bigint NOT NULL,
-posto_nome bigint,
+posto_nome TEXT NOT NULL,
 posto_endereco TEXT NOT NULL,
 CONSTRAINT pk_postos PRIMARY KEY (posto_id)
 );
 CREATE TABLE usuarios
 (
-usuario_id TEXT NOT NULL DEFAULT 0,
+usuario_id TEXT NOT NULL,
 usuario_nome TEXT NOT NULL DEFAULT none,
+usuario_senha TEXT DEFAULT none,
 posto_id bigint NOT NULL DEFAULT 0,
 CONSTRAINT pk_usuario PRIMARY KEY (usuario_id)
+FOREIGN KEY (posto_id) REFERENCES postos (posto_id)
 );
-ALTER TABLE admins ADD CONSTRAINT fk_admins_posto
-FOREIGN KEY (posto_id) REFERENCES postos (posto_id);
-ALTER TABLE estoques ADD CONSTRAINT fk_estoques_itens
-FOREIGN KEY (item_id) REFERENCES itens (item_id);
-ALTER TABLE estoques ADD CONSTRAINT fk_estoques_posto
-FOREIGN KEY (posto_id) REFERENCES postos (posto_id);
-ALTER TABLE usuarios ADD CONSTRAINT fk_usuarios_posto
-FOREIGN KEY (posto_id) REFERENCES postos (posto_id);
 
 
 
