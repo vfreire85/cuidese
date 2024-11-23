@@ -4,18 +4,18 @@
             require_once 'conn.php';
            
             if(ISSET($_POST['login'])){
-                    if($_POST['id'] != "" || $_POST['id'] != ""){
+                    if($_POST['id'] != "" || $_POST['senha'] != ""){
                             $username = $_POST['id'];
                             $password = $_POST['senha'];
-                            $sql = "SELECT * FROM usuario WHERE `username`=? AND `password`=? ";
+                            $sql = "SELECT * FROM usuarios WHERE usuario_id='".$username."' AND usuario_senha='".$password."'";
                             $query = $conn->prepare($sql);
                             $query->execute(array($username,$password));
                             $row = $query->rowCount();
                             $fetch = $query->fetch();
                             if($row > 0) {
-                                    $_SESSION['user'] = $fetch['mem_id'];
-                                    header("location: home_screen.html");
+                                    return true;
                             } else{
+                                    return false;
                                     echo "
                                     <script>alert('Usuário ou senha inválidos!')</script>
                                     <script>window.location = 'login_form.html'</script>
